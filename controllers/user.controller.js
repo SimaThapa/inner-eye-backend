@@ -8,7 +8,7 @@ const saltRounds=10;
 
 const registerUser=async(req,res)=>{
 //hash password using bcrypt
-//
+
     console.log(req.body);
     const {name,email,phoneNumber,password}=req.body;
 

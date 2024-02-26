@@ -6,6 +6,7 @@ async function connectMongodb(){
     try{
         console.log("Hello",user);
         console.log("This is your password",password);
+        
         await mongoose.connect('mongodb://localhost:27017');
         console.log('Database Connected');
     }catch(error){

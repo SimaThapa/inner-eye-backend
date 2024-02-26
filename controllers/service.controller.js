@@ -1,5 +1,6 @@
 const {Service}=require('../models/service.model');
 const {errorHandler}=require('../utils/errorHandlers');
+
 const createService=async(req,res)=>{
     const {title, description}=req.body;
     console.log(req.user);
@@ -37,6 +38,7 @@ const getService=async(req,res)=>{
     }
 }
 
+// update the service
 const updateService=async(req,res)=>{
     const {id}=req.params;
     const {title, description}=req.body;

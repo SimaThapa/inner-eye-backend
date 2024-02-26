@@ -1,9 +1,12 @@
 const jwt=require('jsonwebtoken');
 const {User}=require('../models/user.model');
 const { errorHandler } = require('../utils/errorHandlers');
+
 const verifyJWT=async(req,res,next)=>{
+
     const token=req.cookies?.token;
     console.log(token);
+
     if(!token){
         return res.status(401).json({
             statusCode:401,
@@ -13,7 +16,8 @@ const verifyJWT=async(req,res,next)=>{
     }
     const decode=jwt.verify(token,process.env.JWT_SECRET);
     console.log("THIS IS DECODE",decode);
-    //verify token
+
+   //verify token
     
     try{
         const user=await User.findById(decode._id);
